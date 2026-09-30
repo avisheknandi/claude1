@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1398,
+    "target": 4.0,
+    "pred": 22.166982650756836,
+    "attribution": 22.187973022460938,
+    "band": "0--47",
+    "figure": "prelim_gradcam_1",
+    "positive_map_nonzero": true
+  },
+  {
+    "id": 1394,
+    "target": 57.0,
+    "pred": 77.16944122314453,
+    "attribution": 77.13201904296875,
+    "band": "48--95",
+    "figure": "prelim_gradcam_2",
+    "positive_map_nonzero": true
+  },
+  {
+    "id": 1393,
+    "target": 132.0,
+    "pred": 131.29200744628906,
+    "attribution": 131.31817626953125,
+    "band": "96--143",
+    "figure": "prelim_gradcam_3",
+    "positive_map_nonzero": true
+  },
+  {
+    "id": 1384,
+    "target": 156.0,
+    "pred": 156.47552490234375,
+    "attribution": 156.46849060058594,
+    "band": "144--191",
+    "figure": "prelim_gradcam_4",
+    "positive_map_nonzero": true
+  },
+  {
+    "id": 1617,
+    "target": 192.0,
+    "pred": 184.50125122070312,
+    "attribution": 184.50506591796875,
+    "band": "192--240",
+    "figure": "prelim_gradcam_5",
+    "positive_map_nonzero": true
+  }
+]

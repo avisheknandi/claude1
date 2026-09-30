@@ -1,0 +1,767 @@
+[
+  {
+    "key": "halabi",
+    "title": "The RSNA Pediatric Bone Age Machine Learning Challenge",
+    "authors": [
+      "Safwan S. Halabi",
+      "Luciano M. Prevedello",
+      "Jayashree Kalpathy-Cramer",
+      "Artem B. Mamonov",
+      "Alexander Bilbily",
+      "Mark Cicero",
+      "Ian Pan",
+      "Lucas Araújo Pereira",
+      "Rafael Teixeira Sousa",
+      "Nitamar Abdala",
+      "Felipe Campos Kitamura",
+      "Hans H. Thodberg",
+      "Leon Chen",
+      "George Shih",
+      "Katherine Andriole",
+      "Marc D. Kohli",
+      "Bradley J. Erickson",
+      "Adam E. Flanders"
+    ],
+    "year": 2019,
+    "venue": "Radiology",
+    "doi": "10.1148/radiol.2018180736",
+    "url": "https://doi.org/10.1148/radiol.2018180736",
+    "volume": "290",
+    "pages": "498-503",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1148/radiol.2018180736",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "larson",
+    "title": "Performance of a Deep-Learning Neural Network Model in Assessing Skeletal Maturity on Pediatric Hand Radiographs",
+    "authors": [
+      "David B. Larson",
+      "Matthew C. Chen",
+      "Matthew P. Lungren",
+      "Safwan S. Halabi",
+      "Nicholas V. Stence",
+      "Curtis P. Langlotz"
+    ],
+    "year": 2018,
+    "venue": "Radiology",
+    "doi": "10.1148/radiol.2017170236",
+    "url": "https://doi.org/10.1148/radiol.2017170236",
+    "volume": "287",
+    "pages": "313-322",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1148/radiol.2017170236",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "spampinato",
+    "title": "Deep learning for automated skeletal bone age assessment in X-ray images",
+    "authors": [
+      "C. Spampinato",
+      "S. Palazzo",
+      "D. Giordano",
+      "M. Aldinucci",
+      "R. Leonardi"
+    ],
+    "year": 2017,
+    "venue": "Medical Image Analysis",
+    "doi": "10.1016/j.media.2016.10.010",
+    "url": "https://doi.org/10.1016/j.media.2016.10.010",
+    "volume": "36",
+    "pages": "41-51",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1016/j.media.2016.10.010",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "lee",
+    "title": "Fully Automated Deep Learning System for Bone Age Assessment",
+    "authors": [
+      "Hyunkwang Lee",
+      "Shahein Tajmir",
+      "Jenny Lee",
+      "Maurice Zissen",
+      "Bethel Ayele Yeshiwas",
+      "Tarik K. Alkasab",
+      "Garry Choy",
+      "Synho Do"
+    ],
+    "year": 2017,
+    "venue": "Journal of Digital Imaging",
+    "doi": "10.1007/s10278-017-9955-8",
+    "url": "https://doi.org/10.1007/s10278-017-9955-8",
+    "volume": "30",
+    "pages": "427-441",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "chen",
+    "title": "Attention-Guided Discriminative Region Localization and Label Distribution Learning for Bone Age Assessment",
+    "authors": [
+      "Chao Chen",
+      "Zhihong Chen",
+      "Xinyu Jin",
+      "Lanjuan Li",
+      "William Speier",
+      "Corey W. Arnold"
+    ],
+    "year": 2022,
+    "venue": "IEEE Journal of Biomedical and Health Informatics",
+    "doi": "10.1109/jbhi.2021.3095128",
+    "url": "https://doi.org/10.1109/jbhi.2021.3095128",
+    "volume": "26",
+    "pages": "1208-1218",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1109/JBHI.2021.3095128",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "bonetplus",
+    "title": "A two-stream network with global-local feature fusion for bone age assessment",
+    "authors": [
+      "Qiong Lou",
+      "Han Yang",
+      "Fang Lu"
+    ],
+    "year": 2026,
+    "venue": "Scientific Reports",
+    "doi": "10.1038/s41598-026-54051-9",
+    "url": "https://doi.org/10.1038/s41598-026-54051-9",
+    "volume": "16",
+    "pages": "23117",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1038/s41598-026-54051-9",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "rfga",
+    "title": "Region fine-grained attention network for accurate bone age assessment",
+    "authors": [
+      "Yamei Deng",
+      "Ting Song",
+      "Xu Wang",
+      "Yonglu Chen",
+      "Jianwei Huang"
+    ],
+    "year": 2024,
+    "venue": "Mathematical Biosciences and Engineering",
+    "doi": "10.3934/mbe.2024081",
+    "url": "https://doi.org/10.3934/mbe.2024081",
+    "volume": "21",
+    "pages": "1857-1871",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.3934/mbe.2024081",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "stage",
+    "title": "A developmental stage-aware graph transformer framework for automated bone-age assessment",
+    "authors": [
+      "Kerang Cao",
+      "Chang Liu",
+      "Jiaming Du",
+      "Lini Duan",
+      "Lli Li",
+      "Ye Ma",
+      "Hoekyung Jung"
+    ],
+    "year": 2026,
+    "venue": "Quantitative Imaging in Medicine and Surgery",
+    "doi": "10.21037/qims-2025-998",
+    "url": "https://doi.org/10.21037/qims-2025-998",
+    "volume": "16",
+    "pages": "62-62",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "cfjl",
+    "title": "CFJLNet: Coarse and Fine Feature Joint Learning Network for Bone Age Assessment",
+    "authors": [
+      "Xiaohua Wang",
+      "Wei Fan",
+      "Min Hu",
+      "Yuhang Wang",
+      "Fuji Ren"
+    ],
+    "year": 2022,
+    "venue": "IEEE Transactions on Instrumentation and Measurement",
+    "doi": "10.1109/tim.2022.3193711",
+    "url": "https://doi.org/10.1109/tim.2022.3193711",
+    "volume": "71",
+    "pages": "1-11",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1109/TIM.2022.3193711",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "selfsupervised",
+    "title": "Self-Supervised Attention Mechanism for Pediatric Bone Age Assessment With Efficient Weak Annotation",
+    "authors": [
+      "Chuanbin Liu",
+      "Hongtao Xie",
+      "Yongdong Zhang"
+    ],
+    "year": 2021,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2020.3046672",
+    "url": "https://doi.org/10.1109/tmi.2020.3046672",
+    "volume": "40",
+    "pages": "2685-2697",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1109/TMI.2020.3046672",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "bogff",
+    "title": "Coarse-to-Fine bone age regression by using multi-scale self-attention mechanism",
+    "authors": [
+      "Guanyu Wu",
+      "Ziming Wang",
+      "Jian Peng",
+      "Shaobing Gao"
+    ],
+    "year": 2025,
+    "venue": "Biomedical Signal Processing and Control",
+    "doi": "10.1016/j.bspc.2024.107029",
+    "url": "https://doi.org/10.1016/j.bspc.2024.107029",
+    "volume": "100",
+    "pages": "107029",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1016/j.bspc.2024.107029",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "lightweight",
+    "title": "Hand bone age estimation using divide and conquer strategy and lightweight convolutional neural networks",
+    "authors": [
+      "Amin Ahmadi Kasani",
+      "Hedieh Sajedi"
+    ],
+    "year": 2023,
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "doi": "10.1016/j.engappai.2023.105935",
+    "url": "https://doi.org/10.1016/j.engappai.2023.105935",
+    "volume": "120",
+    "pages": "105935",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1016/j.engappai.2023.105935",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "ensemble",
+    "title": "Improving Automated Pediatric Bone Age Estimation Using Ensembles of                     Models from the 2017 RSNA Machine Learning Challenge",
+    "authors": [
+      "Ian Pan",
+      "Hans Henrik Thodberg",
+      "Safwan S. Halabi",
+      "Jayashree Kalpathy-Cramer",
+      "David B. Larson"
+    ],
+    "year": 2019,
+    "venue": "Radiology: Artificial Intelligence",
+    "doi": "10.1148/ryai.2019190053",
+    "url": "https://doi.org/10.1148/ryai.2019190053",
+    "volume": "1",
+    "pages": "e190053",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1148/ryai.2019190053",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "stress",
+    "title": "Evaluating the Robustness of a Deep Learning Bone Age Algorithm to Clinical Image Variation Using Computational Stress Testing",
+    "authors": [
+      "Samantha M. Santomartino",
+      "Kristin Putman",
+      "Elham Beheshtian",
+      "Vishwa S. Parekh",
+      "Paul H. Yi"
+    ],
+    "year": 2024,
+    "venue": "Radiology: Artificial Intelligence",
+    "doi": "10.1148/ryai.230240",
+    "url": "https://doi.org/10.1148/ryai.230240",
+    "volume": "6",
+    "pages": "e230240",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1148/ryai.230240",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "bias",
+    "title": "Generalizability and Bias in a Deep Learning Pediatric Bone Age                     Prediction Model Using Hand Radiographs",
+    "authors": [
+      "Elham Beheshtian",
+      "Kristin Putman",
+      "Samantha M. Santomartino",
+      "Vishwa S. Parekh",
+      "Paul H. Yi"
+    ],
+    "year": 2023,
+    "venue": "Radiology",
+    "doi": "10.1148/radiol.220505",
+    "url": "https://doi.org/10.1148/radiol.220505",
+    "volume": "306",
+    "pages": "e220505",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1148/radiol.220505",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "integral",
+    "title": "Integral Bone Age Regression",
+    "authors": [
+      "Şerban-Gabriel Doncean",
+      "Vlad Barbu",
+      "Roxana Balcan",
+      "Radu Miron",
+      "Mihaela Elena Breabăn"
+    ],
+    "year": 2024,
+    "venue": "Procedia Computer Science",
+    "doi": "10.1016/j.procs.2024.09.373",
+    "url": "https://doi.org/10.1016/j.procs.2024.09.373",
+    "volume": "246",
+    "pages": "2984-2993",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works/10.1016/j.procs.2024.09.373",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "bonet",
+    "title": "Hand Pose Estimation for Pediatric Bone Age Assessment",
+    "authors": [
+      "María Escobar",
+      "Cristina González",
+      "Felipe Torres",
+      "Laura Daza",
+      "Gustavo Triana",
+      "Pablo Arbeláez"
+    ],
+    "year": 2019,
+    "venue": "Lecture Notes in Computer Science",
+    "doi": "10.1007/978-3-030-32226-7_59",
+    "url": "https://doi.org/10.1007/978-3-030-32226-7_59",
+    "volume": "",
+    "pages": "531-539",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "bonexpert",
+    "title": "The BoneXpert Method for Automated Determination of Skeletal Maturity",
+    "authors": [
+      "H.H. Thodberg",
+      "S. Kreiborg",
+      "A. Juul",
+      "K.D. Pedersen"
+    ],
+    "year": 2009,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2008.926067",
+    "url": "https://doi.org/10.1109/tmi.2008.926067",
+    "volume": "28",
+    "pages": "52-66",
+    "verified_title_similarity": 1.0,
+    "provenance": "https://api.crossref.org/works",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "iglovikov",
+    "title": "Pediatric Bone Age Assessment Using Deep Convolutional Neural Networks",
+    "authors": [
+      "Iglovikov, Vladimir",
+      "Rakhlin, Alexander",
+      "Kalinin, Alexandr",
+      "Shvets, Alexey"
+    ],
+    "year": 2017,
+    "venue": "arXiv preprint arXiv:1712.05053",
+    "doi": "10.48550/arXiv.1712.05053",
+    "url": "https://arxiv.org/abs/1712.05053",
+    "provenance": "https://arxiv.org/abs/1712.05053",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "mobilenetv3",
+    "title": "Searching for MobileNetV3",
+    "authors": [
+      "Howard, Andrew",
+      "Sandler, Mark",
+      "Chu, Grace",
+      "Chen, Liang-Chieh",
+      "Chen, Bo",
+      "Tan, Mingxing",
+      "Wang, Weijun",
+      "Zhu, Yukun",
+      "Pang, Ruoming",
+      "Vasudevan, Vijay",
+      "Le, Quoc V.",
+      "Adam, Hartwig"
+    ],
+    "year": 2019,
+    "venue": "arXiv preprint arXiv:1905.02244",
+    "doi": "10.48550/arXiv.1905.02244",
+    "url": "https://arxiv.org/abs/1905.02244",
+    "provenance": "https://arxiv.org/abs/1905.02244",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "mobilenetv2",
+    "title": "MobileNetV2: Inverted Residuals and Linear Bottlenecks",
+    "authors": [
+      "Sandler, Mark",
+      "Howard, Andrew",
+      "Zhu, Menglong",
+      "Zhmoginov, Andrey",
+      "Chen, Liang-Chieh"
+    ],
+    "year": 2018,
+    "venue": "arXiv preprint arXiv:1801.04381",
+    "doi": "10.48550/arXiv.1801.04381",
+    "url": "https://arxiv.org/abs/1801.04381",
+    "provenance": "https://arxiv.org/abs/1801.04381",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "resnet",
+    "title": "Deep Residual Learning for Image Recognition",
+    "authors": [
+      "He, Kaiming",
+      "Zhang, Xiangyu",
+      "Ren, Shaoqing",
+      "Sun, Jian"
+    ],
+    "year": 2015,
+    "venue": "arXiv preprint arXiv:1512.03385",
+    "doi": "10.48550/arXiv.1512.03385",
+    "url": "https://arxiv.org/abs/1512.03385",
+    "provenance": "https://arxiv.org/abs/1512.03385",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "efficientnet",
+    "title": "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks",
+    "authors": [
+      "Tan, Mingxing",
+      "Le, Quoc V."
+    ],
+    "year": 2019,
+    "venue": "arXiv preprint arXiv:1905.11946",
+    "doi": "10.48550/arXiv.1905.11946",
+    "url": "https://arxiv.org/abs/1905.11946",
+    "provenance": "https://arxiv.org/abs/1905.11946",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "transformer",
+    "title": "Attention Is All You Need",
+    "authors": [
+      "Vaswani, Ashish",
+      "Shazeer, Noam",
+      "Parmar, Niki",
+      "Uszkoreit, Jakob",
+      "Jones, Llion",
+      "Gomez, Aidan N.",
+      "Kaiser, Lukasz",
+      "Polosukhin, Illia"
+    ],
+    "year": 2017,
+    "venue": "arXiv preprint arXiv:1706.03762",
+    "doi": "10.48550/arXiv.1706.03762",
+    "url": "https://arxiv.org/abs/1706.03762",
+    "provenance": "https://arxiv.org/abs/1706.03762",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "vit",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "authors": [
+      "Dosovitskiy, Alexey",
+      "Beyer, Lucas",
+      "Kolesnikov, Alexander",
+      "Weissenborn, Dirk",
+      "Zhai, Xiaohua",
+      "Unterthiner, Thomas",
+      "Dehghani, Mostafa",
+      "Minderer, Matthias",
+      "Heigold, Georg",
+      "Gelly, Sylvain",
+      "Uszkoreit, Jakob",
+      "Houlsby, Neil"
+    ],
+    "year": 2020,
+    "venue": "arXiv preprint arXiv:2010.11929",
+    "doi": "10.48550/arXiv.2010.11929",
+    "url": "https://arxiv.org/abs/2010.11929",
+    "provenance": "https://arxiv.org/abs/2010.11929",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "swin",
+    "title": "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows",
+    "authors": [
+      "Liu, Ze",
+      "Lin, Yutong",
+      "Cao, Yue",
+      "Hu, Han",
+      "Wei, Yixuan",
+      "Zhang, Zheng",
+      "Lin, Stephen",
+      "Guo, Baining"
+    ],
+    "year": 2021,
+    "venue": "arXiv preprint arXiv:2103.14030",
+    "doi": "10.48550/arXiv.2103.14030",
+    "url": "https://arxiv.org/abs/2103.14030",
+    "provenance": "https://arxiv.org/abs/2103.14030",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "gradcache",
+    "title": "Scaling Deep Contrastive Learning Batch Size under Memory Limited Setup",
+    "authors": [
+      "Gao, Luyu",
+      "Zhang, Yunyi",
+      "Han, Jiawei",
+      "Callan, Jamie"
+    ],
+    "year": 2021,
+    "venue": "arXiv preprint arXiv:2101.06983",
+    "doi": "10.48550/arXiv.2101.06983",
+    "url": "https://arxiv.org/abs/2101.06983",
+    "provenance": "https://arxiv.org/abs/2101.06983",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "adamw",
+    "title": "Decoupled Weight Decay Regularization",
+    "authors": [
+      "Loshchilov, Ilya",
+      "Hutter, Frank"
+    ],
+    "year": 2017,
+    "venue": "arXiv preprint arXiv:1711.05101",
+    "doi": "10.48550/arXiv.1711.05101",
+    "url": "https://arxiv.org/abs/1711.05101",
+    "provenance": "https://arxiv.org/abs/1711.05101",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "gradcam",
+    "title": "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization",
+    "authors": [
+      "Selvaraju, Ramprasaath R.",
+      "Cogswell, Michael",
+      "Das, Abhishek",
+      "Vedantam, Ramakrishna",
+      "Parikh, Devi",
+      "Batra, Dhruv"
+    ],
+    "year": 2016,
+    "venue": "arXiv preprint arXiv:1610.02391",
+    "doi": "10.48550/arXiv.1610.02391",
+    "url": "https://arxiv.org/abs/1610.02391",
+    "provenance": "https://arxiv.org/abs/1610.02391",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "mixed",
+    "title": "Mixed Precision Training",
+    "authors": [
+      "Micikevicius, Paulius",
+      "Narang, Sharan",
+      "Alben, Jonah",
+      "Diamos, Gregory",
+      "Elsen, Erich",
+      "Garcia, David",
+      "Ginsburg, Boris",
+      "Houston, Michael",
+      "Kuchaiev, Oleksii",
+      "Venkatesh, Ganesh",
+      "Wu, Hao"
+    ],
+    "year": 2017,
+    "venue": "arXiv preprint arXiv:1710.03740",
+    "doi": "10.48550/arXiv.1710.03740",
+    "url": "https://arxiv.org/abs/1710.03740",
+    "provenance": "https://arxiv.org/abs/1710.03740",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "checkpoint",
+    "title": "Training Deep Nets with Sublinear Memory Cost",
+    "authors": [
+      "Chen, Tianqi",
+      "Xu, Bing",
+      "Zhang, Chiyuan",
+      "Guestrin, Carlos"
+    ],
+    "year": 2016,
+    "venue": "arXiv preprint arXiv:1604.06174",
+    "doi": "10.48550/arXiv.1604.06174",
+    "url": "https://arxiv.org/abs/1604.06174",
+    "provenance": "https://arxiv.org/abs/1604.06174",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "calibration",
+    "title": "On Calibration of Modern Neural Networks",
+    "authors": [
+      "Guo, Chuan",
+      "Pleiss, Geoff",
+      "Sun, Yu",
+      "Weinberger, Kilian Q."
+    ],
+    "year": 2017,
+    "venue": "arXiv preprint arXiv:1706.04599",
+    "doi": "10.48550/arXiv.1706.04599",
+    "url": "https://arxiv.org/abs/1706.04599",
+    "provenance": "https://arxiv.org/abs/1706.04599",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "uncertainty",
+    "title": "What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?",
+    "authors": [
+      "Kendall, Alex",
+      "Gal, Yarin"
+    ],
+    "year": 2017,
+    "venue": "arXiv preprint arXiv:1703.04977",
+    "doi": "10.48550/arXiv.1703.04977",
+    "url": "https://arxiv.org/abs/1703.04977",
+    "provenance": "https://arxiv.org/abs/1703.04977",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "coral",
+    "title": "Rank consistent ordinal regression for neural networks with application to age estimation",
+    "authors": [
+      "Cao, Wenzhi",
+      "Mirjalili, Vahid",
+      "Raschka, Sebastian"
+    ],
+    "year": 2019,
+    "venue": "arXiv preprint arXiv:1901.07884",
+    "doi": "10.48550/arXiv.1901.07884",
+    "url": "https://arxiv.org/abs/1901.07884",
+    "provenance": "https://arxiv.org/abs/1901.07884",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "unet",
+    "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+    "authors": [
+      "Ronneberger, Olaf",
+      "Fischer, Philipp",
+      "Brox, Thomas"
+    ],
+    "year": 2015,
+    "venue": "arXiv preprint arXiv:1505.04597",
+    "doi": "10.48550/arXiv.1505.04597",
+    "url": "https://arxiv.org/abs/1505.04597",
+    "provenance": "https://arxiv.org/abs/1505.04597",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "pytorch",
+    "title": "PyTorch: An Imperative Style, High-Performance Deep Learning Library",
+    "authors": [
+      "Paszke, Adam",
+      "Gross, Sam",
+      "Massa, Francisco",
+      "Lerer, Adam",
+      "Bradbury, James",
+      "Chanan, Gregory",
+      "Killeen, Trevor",
+      "Lin, Zeming",
+      "Gimelshein, Natalia",
+      "Antiga, Luca",
+      "Desmaison, Alban",
+      "Köpf, Andreas",
+      "Yang, Edward",
+      "DeVito, Zach",
+      "Raison, Martin",
+      "Tejani, Alykhan",
+      "Chilamkurthy, Sasank",
+      "Steiner, Benoit",
+      "Fang, Lu",
+      "Bai, Junjie",
+      "Chintala, Soumith"
+    ],
+    "year": 2019,
+    "venue": "arXiv preprint arXiv:1912.01703",
+    "doi": "10.48550/arXiv.1912.01703",
+    "url": "https://arxiv.org/abs/1912.01703",
+    "provenance": "https://arxiv.org/abs/1912.01703",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "squeeze",
+    "title": "Squeeze-and-Excitation Networks",
+    "authors": [
+      "Hu, Jie",
+      "Shen, Li",
+      "Albanie, Samuel",
+      "Sun, Gang",
+      "Wu, Enhua"
+    ],
+    "year": 2017,
+    "venue": "arXiv preprint arXiv:1709.01507",
+    "doi": "10.48550/arXiv.1709.01507",
+    "url": "https://arxiv.org/abs/1709.01507",
+    "provenance": "https://arxiv.org/abs/1709.01507",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "batchnorm",
+    "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+    "authors": [
+      "Ioffe, Sergey",
+      "Szegedy, Christian"
+    ],
+    "year": 2015,
+    "venue": "arXiv preprint arXiv:1502.03167",
+    "doi": "10.48550/arXiv.1502.03167",
+    "url": "https://arxiv.org/abs/1502.03167",
+    "provenance": "https://arxiv.org/abs/1502.03167",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "layernorm",
+    "title": "Layer Normalization",
+    "authors": [
+      "Ba, Jimmy Lei",
+      "Kiros, Jamie Ryan",
+      "Hinton, Geoffrey E."
+    ],
+    "year": 2016,
+    "venue": "arXiv preprint arXiv:1607.06450",
+    "doi": "10.48550/arXiv.1607.06450",
+    "url": "https://arxiv.org/abs/1607.06450",
+    "provenance": "https://arxiv.org/abs/1607.06450",
+    "accessed": "2026-09-30"
+  },
+  {
+    "key": "cbam",
+    "title": "CBAM: Convolutional Block Attention Module",
+    "authors": [
+      "Woo, Sanghyun",
+      "Park, Jongchan",
+      "Lee, Joon-Young",
+      "Kweon, In So"
+    ],
+    "year": 2018,
+    "venue": "arXiv preprint arXiv:1807.06521",
+    "doi": "10.48550/arXiv.1807.06521",
+    "url": "https://arxiv.org/abs/1807.06521",
+    "provenance": "https://arxiv.org/abs/1807.06521",
+    "accessed": "2026-09-30"
+  }
+]

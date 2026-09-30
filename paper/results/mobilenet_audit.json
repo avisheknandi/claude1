@@ -1,0 +1,16 @@
+{
+  "rows": 14036,
+  "counts": {
+    "fit": 10077,
+    "holdout": 1425,
+    "dev": 1259,
+    "calibration": 1256,
+    "excluded": 19
+  },
+  "exact_cross_split_hashes": 0,
+  "perceptual_cross_split_hashes": 11,
+  "perceptual_excluded_training_rows": 19,
+  "note": "Exact matching dHash groups excluded across holdout; non-identical near duplicates and patient independence remain unverified.",
+  "train_age_min": 1.0,
+  "train_age_max": 228.0
+}

@@ -1,0 +1,4 @@
+Method,MAE,RMSE,Bias,$\leq6$ mo (\%),$\leq12$ mo (\%)
+Early global checkpoint,8.285,10.928,4.496,47.74,75.30
+Fitting median,32.005,40.143,3.554,14.61,28.67
+Fitting sex median,30.542,40.245,7.828,17.55,31.77

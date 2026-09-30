@@ -1,0 +1,18 @@
+{
+  "command": "run",
+  "root": "C:\\ABC\\RSNA_BONE_AGE",
+  "run": "runs/upgraded",
+  "hours": 8.0,
+  "global_epochs": 8,
+  "multiview_epochs": 24,
+  "utility_epochs": 10,
+  "seed": 42,
+  "batch": 4,
+  "workers": 3,
+  "audit_workers": 8,
+  "global_size": 640,
+  "local_size": 384,
+  "resume": false,
+  "backbone": "resnet50",
+  "global_batch": 4
+}

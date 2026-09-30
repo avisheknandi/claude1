@@ -1,0 +1,24 @@
+[
+  {
+    "mode": "replay",
+    "batch": 4,
+    "global_size": 640,
+    "local_size": 384,
+    "allocated_mib": 1749.76171875,
+    "reserved_mib": 1972.0,
+    "sampled_device_peak_mib": 2116.0,
+    "seconds_update": 1.072628275,
+    "oom": false
+  },
+  {
+    "mode": "joint",
+    "batch": 4,
+    "global_size": 640,
+    "local_size": 384,
+    "allocated_mib": 6303.71923828125,
+    "reserved_mib": 6634.0,
+    "sampled_device_peak_mib": 3950.0,
+    "seconds_update": 4.893272649999997,
+    "oom": false
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "backbone": "resnet50",
+    "batch": 4,
+    "global_size": 640,
+    "local_size": 384,
+    "parameters": 24069457,
+    "reserved_mib": 1950.0,
+    "allocated_mib": 1749.51171875,
+    "seconds_microbatch": 1.0115736250000005,
+    "images_per_second": 3.954235165038035,
+    "oom": false
+  }
+]

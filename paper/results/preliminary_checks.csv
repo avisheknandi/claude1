@@ -1,0 +1,10 @@
+Check,Measured outcome
+unseen isolation [0],0.0
+"unseen isolation [0, 2]",0.0
+"unseen isolation [0, 2, 7]",0.0
+budget 0,True
+budget 1,True
+budget 2,True
+budget 3,True
+immediate stop equals global,True
+invalid sex rejected,True

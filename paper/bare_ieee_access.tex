@@ -1,0 +1,275 @@
+% Preserve TeX's year register: the IEEE Access class defines a conflicting year setter.
+\let\BAREprimitiveyear\year
+\documentclass[nolineno]{ieeeaccess}
+\let\year\BAREprimitiveyear
+\renewcommand{\theyear}{2026}
+\vol{Draft}
+\usepackage{cite,amsmath,amssymb,graphicx,booktabs,tabularx,array}
+\usepackage{algorithm,algpseudocode}
+\usepackage{tikz}\usetikzlibrary{arrows.meta,positioning}
+% RGB fallback avoids incompatible spot-color definitions when TikZ loads xcolor.
+\definecolor{accessblue}{RGB}{0,103,143}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\sg}{\operatorname{stopgrad}}
+\newcommand{\MAE}{\operatorname{MAE}}
+\newcommand{\softmax}{\operatorname{softmax}}
+\setlength{\emergencystretch}{1em}
+\begin{document}
+\history{Experimental research draft. Run date: 30 September 2026. Not accepted or published.}
+\doi{}
+\title{BARE: Budgeted Regional Evidence Acquisition with Gradient-Replayed Training for Bone Age Estimation on a 4 GB GPU}
+\author{}
+\address{}
+\corresp{}
+\markboth{BARE: Research Draft}{BARE: Research Draft}
+\begin{abstract}
+High-resolution multiview bone age models can be difficult to train under a laptop video-memory constraint. This paper presents the implementation of Budgeted Acquisition of Regional Evidence, which combines a shared MobileNetV3-Large encoder, small evidence-set attention, ordinal age-distribution learning, model-defined crop-utility supervision and deterministic token-gradient replay. This version reports preliminary executed results from global warmup and completed resource/correctness experiments; full multiview acquisition training is still running. A frozen early global checkpoint achieved 8.285 months mean absolute error and 10.928 months root mean squared error on 1259 development images. These model-selection results are not independent test performance. A ten-view training admission profile measured 260 MiB reserved memory with replay versus 704 MiB with joint backpropagation, while both configurations fitted the four-gigabyte RTX 3050. A deterministic gradient test obtained relative error of approximately $4.54\times10^{-8}$. Results include development subgroups, fitting-only age-prior comparisons, optimization logs, software checks, resource measurements and five predetermined regression Grad-CAM cases. Forty verified references, a focused literature survey and protocol-qualified published accuracy/resource comparisons accompany the analysis. The official validation holdout remains unevaluated. The reported scope does not establish final acquisition accuracy, official-test state of the art, external generalization or clinical validity.
+\end{abstract}
+\begin{keywords}Bone age estimation, counterfactual utility, gradient replay, medical image analysis, memory-constrained learning, regional evidence acquisition.\end{keywords}
+\titlepgskip=-15pt
+\maketitle
+
+\section{Introduction}
+\PARstart{P}{ediatric} bone age estimation uses skeletal appearance in hand radiographs as a developmental indicator. Public benchmarks accelerated convolutional approaches, but their evaluation protocols and use of auxiliary annotations vary~\cite{halabi,larson,spampinato,lee,iglovikov,bonexpert}. The RSNA challenge separates 12,611 training, 1,425 validation and 200 test images~\cite{halabi}. A method evaluated on the public validation labels cannot be ranked directly against methods evaluated on the smaller official test set.
+
+Attention-guided localization, local/global fusion and distribution learning are established bone-age techniques~\cite{chen,cfjl,selfsupervised,rfga,bonet,bogff,bonetplus,integral}. Regional CNNs can also be designed for lightweight operation~\cite{lightweight}. BARE investigates a narrower question: can the expected \emph{incremental} value of a crop be learned without encoding that unseen crop at inference, while preserving detailed regional supervision under a laptop memory budget?
+
+Our implementation contributes three testable elements. First, it supervises crop utility with the change in model absolute error caused by adding a crop to a sampled evidence subset. Second, a small evidence-set model combines ordinal age learning with local descriptors, recorded sex, and regional disagreement. Third, replay separates fusion differentiation from encoder backpropagation, applying the existing gradient-caching principle~\cite{gradcache} to shared multiview bone-age training. The combination is a candidate research contribution; this paper does not claim that gradient caching, attention, or distribution learning were invented here.
+
+\section{Related work}
+\subsection{Global, regional, and developmental evidence}
+Earlier systems established global convolutional prediction and hand segmentation~\cite{spampinato,lee,larson,iglovikov}. Attention-guided crops reduce reliance on explicit localization annotations~\cite{chen,selfsupervised}. Coarse/fine fusion, fine-grained discrimination and multiscale regression exploit local skeletal detail~\cite{cfjl,rfga,bogff}. Two-stream and pose-guided methods use additional regional structure~\cite{bonet,bonetplus}; developmental stage-aware graph fusion is also prior art~\cite{stage}. Ensemble gains illustrate that complementary predictions can matter~\cite{ensemble}. Table~\ref{tab:prelim_literature} surveys the related methods.
+
+
+\input{tables/prelim_literature.tex}
+
+\subsection{Efficient representation and memory control}
+MobileNet inverted residuals and architecture search motivate the shared encoder~\cite{mobilenetv2,mobilenetv3}; residual networks, EfficientNet, squeeze/excitation and channel/spatial attention supply alternative designs~\cite{resnet,efficientnet,squeeze,cbam}. Dense prediction architectures such as U-Net address segmentation at an additional training cost~\cite{unet}. Transformer, vision transformer and shifted-window work motivate token fusion~\cite{transformer,vit,swin}, although this implementation attends only to a small set of pooled view descriptors.
+Mixed precision and activation recomputation are complementary memory techniques~\cite{mixed,checkpoint}. Batch and layer normalization have different behavior under small batches~\cite{batchnorm,layernorm}. We freeze encoder batch-normalization statistics and use layer-normalized evidence fusion. PyTorch provides the executed training substrate~\cite{pytorch}; AdamW supplies the optimizer~\cite{adamw}.
+
+\subsection{Ordinal outputs, robustness and interpretation}
+Label distributions and ordinal relationships are useful for age prediction~\cite{chen,coral}; integral prediction is another established strategy~\cite{integral}. Entropy and regional disagreement are not automatically calibrated confidence~\cite{calibration,uncertainty}. Distribution shift and radiographic perturbations can degrade bone-age algorithms~\cite{stress,bias}. We therefore provide descriptive error analyses and regression-target Grad-CAM~\cite{gradcam}, while avoiding claims that saliency demonstrates clinical reasoning or causal anatomy.
+
+\section{Materials and methods}
+\subsection{Dataset, audit and frozen partitions}
+We resolve every CSV image ID to one PNG, validate label range and the explicit true/false sex flag, and decode every radiograph. Original file hashes, decoded-pixel hashes and low-resolution difference hashes are recorded. Exact cross-holdout pixel duplicates and identical difference-hash matches are excluded from fitting/development/calibration. Within the supplied training set, approximate sex/12-month stratification uses ten grouped folds: eight fitting folds, one development fold and one calibration fold. The supplied validation set is sealed for final reporting. Patient independence and non-identical near duplicates remain unverified. Hash grouping is conservative and can also group different images with similar low-resolution structure.
+
+Image preprocessing normalizes the 0.5th--99.5th percentile range to an 8-bit grayscale PNG cache, caps the master image's longest side at 1,280 pixels, and letterboxes the hand. This normalization is lossless relative to the stored 8-bit cache, but conversion from an original higher-bit-depth image is an explicit quantization. The global view is $384\times384$; nine overlapping crops are extracted before downsampling to $256\times256$. Centers are $(0.25,0.50,0.75)^2$ with normalized side 0.45. The windows are a spatial cover, not verified anatomical landmarks.
+
+\subsection{Shared encoder and evidence-set fusion}
+A generic ImageNet-pretrained MobileNetV3-Large~\cite{mobilenetv3} has its classifier removed. The 960-dimensional pooled feature is projected to 128 dimensions; grayscale is repeated into three input channels. For view $j$ with coordinate vector $b_j$, its token is
+\begin{equation}
+z_j=P_\theta\operatorname{GAP}(f_\theta(x_j)),\quad
+t_j=z_j+W_b b_j+e_{v_j}.
+\end{equation}
+Two pre-normalized transformer blocks with four heads and 256-unit feedforward layers operate on the view tokens plus a sex-conditioned query. For evidence subset $S$, the query representation $h_S$ predicts
+\begin{equation}
+p_{S,m}=\softmax(\ell(h_S))_m,\quad
+\hat y_S=\sum_{m=0}^{240}m\,p_{S,m}.
+\end{equation}
+Recorded sex is a 16-dimensional learned embedding. No chronological age enters the model. Global-only and random subset paths share parameters with the full ten-view path.
+
+\begin{figure}[!t]\centering
+\begin{tikzpicture}[node distance=6mm,box/.style={draw,rounded corners,align=center,text width=65mm,minimum height=9mm,font=\small},arr/.style={-{Latex},thick}]
+\node[box](a){Hand radiograph / normalized CPU master};
+\node[box,below=of a](b){Global view + nine candidate windows};
+\node[box,below=of b](c){One shared MobileNetV3 encoder\\128-D tokens, one view graph at a time};
+\node[box,below=of c](d){Evidence-set attention + recorded sex};
+\node[box,below=of d](e){Age distribution + signed crop-utility head};
+\node[box,below=of e](f){Acquire next crop / stop at budget 3\\Expected age in months};
+\draw[arr](a)--(b);\draw[arr](b)--(c);\draw[arr](c)--(d);\draw[arr](d)--(e);\draw[arr](e)--(f);
+\draw[arr,dashed](f.east)--++(.45,0)|-(b.east);
+\end{tikzpicture}
+\caption{Implemented BARE architecture. Training enumerates all ten views with replay; deployment encodes only the global image and acquired regions.}\label{fig:architecture}\end{figure}
+
+\subsection{Age and acquisition losses}
+A normalized Gaussian target $q_m(y)\propto\exp[-(m-y)^2/8]$ supplies soft labels with a two-month width. The objective combines absolute age error, cross entropy and ordinal CDF distance:
+\begin{equation}
+\begin{split}
+\mathcal L_{\rm age}(S,y)&=|\hat y_S-y|/12
+-0.1\sum_m q_m(y)\log p_{S,m}\\
+&\quad+\frac{0.5}{240}\sum_{m=0}^{239}|F_{p_S}(m)-F_q(m)|.
+\end{split}
+\end{equation}
+Average this loss over the global-only subset, all ten views and two random subsets containing one to three local views. A 0.1-weighted mean singleton-view loss provides weak regional supervision. Background crops may receive noisy age supervision; a retrained weight ablation remains future work.
+
+For fitting image $i$, subset $S$ and unacquired crop $j$, define the signed gain
+\begin{equation}
+u^*_{i,j\mid S}=|\hat y_{i,S}-y_i|-|\hat y_{i,S\cup\{j\}}-y_i|.
+\end{equation}
+Negative gains are retained. These are model-defined counterfactual comparisons rather than causal effects. A two-hidden-layer utility MLP predicts this gain from detached fused representation, age distribution, sex embedding, subset size, candidate geometry, normalized regional disagreement and entropy, and three cheap low-resolution statistics (mean, standard deviation, gradient energy). No unseen high-resolution token enters the utility input. The fitting-only utility objective is Huber loss with a two-month transition. Input means and scales are estimated from fitting-only utility data.
+
+\subsection{Replay and numerical correctness}
+Graph-free encoder passes first cache token values. Detached token leaves then allow differentiation of the complete fusion objective. With $g_j=\partial\mathcal L/\partial z_j$ cached, one view is replayed at a time:
+\begin{equation}
+\nabla_\theta\mathcal L
+=\sum_j J_\theta(z_j)^\top g_j
+=\nabla_\theta\sum_j\langle z_j,\sg(g_j)\rangle.
+\end{equation}
+Weights, augmented inputs and normalization states remain fixed until the complete optimizer update. Encoder stochastic layers are absent and running BN statistics are frozen. Fusion dropout is sampled once in the token-leaf pass; the encoder replay uses the resulting cached gradients. Under mixed precision, token gradients already include the gradient-scaler factor and are not scaled twice.
+
+\begin{algorithm}[!t]\caption{One multiview replay update}\label{alg:replay}
+\begin{algorithmic}[1]
+\State Sample and retain a single master augmentation
+\For{each global/local view $j$}
+\State Cache $z_j=f_\theta(x_j)$ without an encoder graph
+\EndFor
+\State Create gradient-enabled token leaves; compute subset losses
+\State Differentiate fusion once; cache scaled token gradients $g_j$
+\For{each view $j$}
+\State Recompute the same $z_j$ with encoder graph
+\State Backpropagate $\langle z_j,\sg(g_j)\rangle$ and release graph
+\EndFor
+\State After the accumulation window: unscale, clip, step once
+\end{algorithmic}\end{algorithm}
+
+\subsection{Training, calibration and final inference}
+The current global warmup uses seed 42; the implemented subsequent multiview stage is configured as follows. The overall run uses seed 42, AdamW weight decay $10^{-4}$, eight-image global batches, two-image multiview batches with four-step accumulation, FP16 encoder autocast, FP32 fusion/losses, and a cosine learning-rate schedule. Global encoder/head learning rates start at $10^{-4}/3\times10^{-4}$; multiview rates start at $5\times10^{-5}/1.5\times10^{-4}$. Mild brightness/contrast jitter and $\pm10^\circ$ rotations are applied coherently to the master image. There is no scale augmentation in this implementation. Global warmup is followed by multiview training, with an overnight wall-time allowance and development-based checkpoint selection. Training is in progress; completed epoch counts and checkpoint selection are pending.
+
+Unlike the initial concept's more ambitious schedule, the implemented downstream procedure will use one fitting-only deterministic token cache per selected checkpoint and random subsets to fit the policy; augmented utility caches and trajectory-refinement cycles are not implemented. This difference is documented rather than implied to have been tested. A no-disagreement policy is implemented for subsequent fitting on the same utility targets, with that feature masked; it is not yet evaluated in these interim results.
+
+Starting with the global token, select the unobserved crop with greatest predicted signed gain, encode it, update the evidence state and repeat up to three times. For adaptive inference, stop when the greatest gain is no larger than $\tau$. The calibration partition chooses among always-acquire, 0, 0.25, 0.5 and 1.0 months, minimizing crop count within 0.15 months MAE of the always-three policy. Model selection, fitting normalization and threshold selection precede all final holdout predictions.
+
+
+\section{Results: preliminary executed experiments}
+\subsection{Scope, checkpoint and dataset accounting}
+This results section reports an actual frozen global-warmup checkpoint, not the completed multiview acquisition model. The snapshot is from global epoch 5 and predicts only from the whole-hand image plus recorded sex. It was chosen using development MAE during continuing training. The 1259 development images therefore serve both selection and descriptive evaluation; the resulting metrics are optimistic and must not be interpreted as independent test accuracy. No calibration or official-validation holdout predictions are used here. Table~\ref{tab:prelim_partitions} and Fig.~\ref{fig:prelim_data} document the audited dataset. Nineteen training rows with matching low-resolution hashes across the sealed holdout were conservatively excluded; no exact cross-holdout decoded-pixel duplicates were found.
+\input{tables/prelim_partitions.tex}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/prelim_data.png}
+\caption{Age distributions from the audited manifest. Holdout labels are shown for dataset accounting only; holdout images are not predicted in this interim study.}
+\label{fig:prelim_data}
+\end{figure}
+
+\subsection{Prediction metrics and optimization}
+The early global checkpoint obtained MAE 8.285 months and RMSE 10.928 months, with signed bias 4.496 months. Table~\ref{tab:prelim_metrics} compares its predictions against age priors whose medians are estimated from fitting labels only. The sex-specific prior selects the fitting median for the recorded sex and uses no image evidence. These priors are regression baselines rather than published deep-learning competitors. Figures~\ref{fig:prelim_scatter} and \ref{fig:prelim_agreement} show actual development predictions and errors. The agreement limits are descriptive, not clinical acceptance bounds.
+\input{tables/prelim_metrics.tex}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/prelim_scatter.png}
+\caption{Actual predictions of the frozen global warmup checkpoint on development images, colored by recorded sex.}
+\label{fig:prelim_scatter}
+\end{figure}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/prelim_agreement.png}
+\caption{Development signed-error distribution and prediction--reference agreement; dashed limits are mean $\pm1.96$ standard deviations, not clinical acceptance bounds.}
+\label{fig:prelim_agreement}
+\end{figure*}
+Figure~\ref{fig:prelim_learning} and Table~\ref{tab:prelim_epochs} show completed global optimization epochs at capture time. A temporary status-logging error occurred after the first epoch checkpoint was saved; it was repaired, and the process resumed from that checkpoint. No final holdout was evaluated during that repair. Current training is ongoing; later checkpoints and the utility policy are outside this snapshot's reported scope.
+\input{tables/prelim_epochs.tex}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/prelim_learning.png}
+\caption{Completed global warmup losses and development MAE at capture time. Full multiview acquisition training is not represented.}
+\label{fig:prelim_learning}
+\end{figure*}
+
+\subsection{Subgroups and sampling diagnostics}
+Tables~\ref{tab:prelim_sex} and \ref{tab:prelim_age} report recorded-sex and age-band metrics for the same development predictions. Figure~\ref{fig:prelim_subgroups} shows age-dependent errors and empirical absolute-error cumulative distributions, with the latter displayed up to 60 months. Small age groups and development-set selection limit interpretation. Table~\ref{tab:prelim_bootstrap} gives paired case-bootstrap differences against fitting-only median priors. The intervals condition on this single checkpoint and selected development set, so they do not estimate independent generalization or training-seed variability.
+\input{tables/prelim_sex.tex}
+\input{tables/prelim_age.tex}
+\input{tables/prelim_bootstrap.tex}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/prelim_subgroups.png}
+\caption{Development age-band error and empirical absolute-error distributions versus fitting-only median priors.}
+\label{fig:prelim_subgroups}
+\end{figure*}
+
+\subsection{GPU resources and implementation checks}
+Table~\ref{tab:prelim_memory} and Fig.~\ref{fig:prelim_resources} report an executed ten-view synthetic-input training profile on the RTX 3050. Twenty-two complete optimizer updates were profiled, with the first two excluded from timing. Joint backpropagation reserved 704 MiB and replay reserved 260 MiB, but replay took more time per update. Both fitted the 4 GB device: this is a headroom/compute tradeoff rather than proof that joint training was impossible. These memory measurements are separate from the global checkpoint's accuracy experiment. CUDA allocator metrics do not include every driver allocation; sampled device use is listed separately.
+\input{tables/prelim_memory.tex}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/prelim_resources.png}
+\caption{Actual same-hardware ten-view admission measurements: replay reserves less CUDA memory while taking more time per optimizer update.}
+\label{fig:prelim_resources}
+\end{figure*}
+The three-view deterministic FP32 replay test in Table~\ref{tab:prelim_replay} obtained relative encoder-gradient error $4.54\times10^{-8}$ and zero fusion-gradient discrepancy. It verifies the implementation on a small case, not convergence or clinical prediction quality. Table~\ref{tab:prelim_checks} lists executed acquisition-input, crop-budget, stopping and sex-parsing checks. The policy-isolation check uses test tensors rather than trained policy-accuracy results.
+\input{tables/prelim_replay.tex}
+\input{tables/prelim_checks.tex}
+
+\subsection{Five genuine development Grad-CAM images}
+Figures~\ref{fig:prelim_gradcam_1}--\ref{fig:prelim_gradcam_5} contain five actual hand radiographs with regression Grad-CAM computed from the frozen trained global checkpoint. Cases are selected by the smallest image ID in each prespecified 48-month development age band, not by prediction error or attractiveness. Table~\ref{tab:prelim_cam_cases} identifies every case and distinguishes FP16 evaluation from FP32 attribution. For the predicted expected age and last convolutional maps,
+\begin{equation}
+\alpha_k=\frac1{HW}\sum_{u,v}\frac{\partial\hat y}{\partial A^k_{uv}},\qquad
+G=\operatorname{ReLU}\left(\sum_k\alpha_kA^k\right).
+\end{equation}
+Each map is normalized by its positive maximum. Positive scalar-age saliency indicates features locally increasing age; negative contributions are omitted. Color values are not comparable magnitudes across cases. These are whole-hand maps from the global warmup model, not trained acquisition-policy or local-crop explanations. Saliency cannot establish causal anatomy, clinical reasoning or localization correctness.
+\input{tables/prelim_cam_cases.tex}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/prelim_gradcam_1.png}
+\caption{Development Grad-CAM case 1, image 1398, reference age 4 months. Original normalized hand, positive expected-age attribution and overlay from the frozen global checkpoint. This is not a learned crop-policy explanation.}
+\label{fig:prelim_gradcam_1}
+\end{figure*}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/prelim_gradcam_2.png}
+\caption{Development Grad-CAM case 2, image 1394, reference age 57 months. Original normalized hand, positive expected-age attribution and overlay from the frozen global checkpoint. This is not a learned crop-policy explanation.}
+\label{fig:prelim_gradcam_2}
+\end{figure*}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/prelim_gradcam_3.png}
+\caption{Development Grad-CAM case 3, image 1393, reference age 132 months. Original normalized hand, positive expected-age attribution and overlay from the frozen global checkpoint. This is not a learned crop-policy explanation.}
+\label{fig:prelim_gradcam_3}
+\end{figure*}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/prelim_gradcam_4.png}
+\caption{Development Grad-CAM case 4, image 1384, reference age 156 months. Original normalized hand, positive expected-age attribution and overlay from the frozen global checkpoint. This is not a learned crop-policy explanation.}
+\label{fig:prelim_gradcam_4}
+\end{figure*}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/prelim_gradcam_5.png}
+\caption{Development Grad-CAM case 5, image 1617, reference age 192 months. Original normalized hand, positive expected-age attribution and overlay from the frozen global checkpoint. This is not a learned crop-policy explanation.}
+\label{fig:prelim_gradcam_5}
+\end{figure*}
+
+\subsection{Comprehensive published-method comparison}
+Tables~\ref{tab:prelim_sota_accuracy}, \ref{tab:prelim_sota_resources} and \ref{tab:prelim_sota_optimization} cover reported accuracy, evaluation protocol, architecture, supervision, resolution, GPU, batch size, epochs, parameters, FLOPs, VRAM, latency, optimizer, learning rate, objective, data sizes and training duration. NR means not verified/reported in the consulted source material; these missing values are not estimated from backbone names. Published results use different official/custom test partitions and annotations. Our early checkpoint uses development data, so no direct SOTA ranking is valid. Resource profiles and prediction metrics likewise describe separate executed experiments, and latencies measured on different GPUs are not comparable.
+\input{tables/prelim_sota_accuracy.tex}
+\input{tables/prelim_sota_resources.tex}
+\input{tables/prelim_sota_optimization.tex}
+\clearpage
+
+\subsection{Larger-backbone admission after user-requested upgrade}
+The interim accuracy and Grad-CAM results above remain those of the preserved MobileNetV3 checkpoint. A separate ResNet-50 experiment was admitted after observing unused memory capacity. Table~\ref{tab:upgrade_admission} reports synthetic-input replay profiles with optimizer updates; these are resource measurements, not accuracy comparisons. The replacement run uses a $640\times640$ global view, $384\times384$ local views, four-image microbatches accumulated to eight, and the same fitting/development/calibration/holdout IDs. It is initialized from public ImageNet weights and does not load incompatible MobileNet weights. ResNet-50's 2,048-dimensional pooled features are projected to the same 128-dimensional fusion space. The original checkpoints are preserved. Larger capacity and resolution are hypotheses for improved accuracy, pending independent development and final-holdout measurements.
+
+Global-only loading now letterboxes and augments at the global resolution and skips unused crop proxies. Multiview loading retains the 1,280-pixel CPU master for fine-detail crops. Prefetching is limited to one batch per worker to reduce host-memory demand. These implementation changes reduce preprocessing work; GPU utilization during a synthetic profile is not evidence of sustained utilization during full dataset training.
+
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Executed larger-backbone replay admission. Five synthetic-input complete microbatch updates per candidate; first update excluded from timing. Parameters include the shared encoder, projection and fusion, excluding the separately trained utility head. Memory is peak CUDA allocator-reserved MiB; no predictive accuracy is implied.}
+\label{tab:upgrade_admission}
+\begin{tabular}{lrrrrrr}
+\toprule
+Encoder & Parameters (M) & Global/local px & Batch & Reserved MiB & s/microbatch & Images/s\\
+\midrule
+EfficientNet-B2 & 8.180 & 512/320 & 4 & 1558 & 1.041 & 3.842\\
+ResNet-50 & 24.069 & 512/320 & 2 & 894 & 0.540 & 3.707\\
+ResNet-50 & 24.069 & 512/320 & 4 & 1356 & 0.787 & 5.085\\
+ResNet-50 (selected) & 24.069 & 640/384 & 4 & 1950 & 1.012 & 3.954\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{Discussion and limitations}
+The executed evidence supports the correctness of the replay implementation and a measured reduction in simultaneous training-memory reservation, with increased compute. It also confirms that the early global model learns image-dependent age information beyond fitting-only median priors. This observation does not establish the value of counterfactual crop acquisition: multiview training, utility fitting, calibration and sealed-holdout evaluation are still running and must be assessed separately.
+
+The development set selects the reported checkpoint; consequently, all prediction and subgroup values in this version are model-selection diagnostics. There is one seed, no external institution cohort, no official 200-image challenge test and no verified patient-level grouping. Difference-hash grouping is conservative but is not a complete non-identical near-duplicate audit. The 8-bit normalized cache may quantize higher-bit-depth originals. Five saliency cases do not validate attention over the entire population. Numerical replay checks and lightweight memory profiles should not be conflated with a clinically validated accuracy result.
+
+The final reporting pipeline will replace this interim section in the same source file after the complete BARE run finishes. It will use the frozen calibration threshold and sealed 1,425-image validation holdout, with explicitly labeled global, fixed/random crop and acquisition-policy variants. This version preserves the prospective architecture and equations for reproducibility, while reporting only experiments that have already completed. All author, affiliation and correspondence fields remain blank at the user's request.
+
+\section{Conclusion}
+BARE has been implemented and is undergoing overnight evaluation on a 4 GB CUDA laptop. The frozen early global checkpoint has development MAE 8.285 months; this is a preliminary model-selection result. Actual resource and numerical checks demonstrate a memory/compute tradeoff for replay and close gradient agreement. Final acquisition accuracy, official-test superiority, clinical validity and external generalization are not established by this interim study.
+
+\section*{Acknowledgment}
+The RSNA Pediatric Bone Age Challenge organizers and original contributing institutions are acknowledged for the dataset. OpenAI Codex assisted with the research concept, code, reference retrieval, manuscript drafting and reporting. The figures and five Grad-CAM cases are computed from actual data and a trained checkpoint, not synthetic predictions. Human researchers must review scientific claims and data-use terms before submission.
+\input{references.tex}
+\EOD
+\end{document}

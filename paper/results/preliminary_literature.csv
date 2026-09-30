@@ -1,0 +1,10 @@
+Work,Year,Architecture,Supervision,Contribution,Relation / limitation
+Chen et al.~\cite{chen},2022,Attention crops + LDL,Annotation-free attention,Region discovery; distribution learning,No explicit marginal gain or laptop memory objective
+RFGA-Net~\cite{rfga},2024,InceptionV3 + RAA/FFA,Sex + attention,Fine-grained feature discrimination,No measured 4 GB training in source
+CFJLNet~\cite{cfjl},2022,Coarse/fine feature fusion,Attention,Cross-scale joint learning,Evidence is fused rather than budget-acquired
+Self-supervised attention~\cite{selfsupervised},2021,Region consistency,Weak annotation,Region consistency objectives,Acquisition utility is not supervised by error reduction
+Divide/conquer~\cite{lightweight},2023,Lightweight regional CNNs,Regional decomposition,Compact regional inference,Protocol and resource accounting differ
+BoGFF-Net~\cite{bogff},2025,Coarse-to-fine attention,Sex + triplet loss,Multiscale regression,Different encoder and fusion costs
+BoNet+~\cite{bonetplus},2026,Two-stream global/local,Keypoints / bounding boxes,Global transformer plus RFAConv,Additional annotations and RTX 4090 training
+DSGTF~\cite{stage},2026,Graph + stage-aware fusion,17 keypoints,Developmental-stage evidence fusion,Different 70/15/15 split and RTX 4090
+BARE,Preliminary,Shared MobileNetV3 + utility,Sex; nine-window grid,Marginal evidence acquisition + replay,Global checkpoint evaluated; policy results pending

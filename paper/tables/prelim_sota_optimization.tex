@@ -1,0 +1,19 @@
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Optimization and data-size comparison. Early-checkpoint learning rates are encoder/head initial values. Reported training duration includes its completed warmup epochs only, excluding audit and ongoing subsequent training. NR values are not guessed.}
+\label{tab:prelim_sota_optimization}
+\begin{tabularx}{\textwidth}{@{}p{28mm}XXXXXXX@{}}
+\toprule
+Method & Optimizer & Initial LR & Objective & Fitting $N$ & Dev / cal $N$ & Evaluation & Train time \\
+\midrule
+Chen et al.~\cite{chen} & NR & NR & Distribution + regression & NR & NR & NR & NR \\
+RFGA-Net~\cite{rfga} & SGD & NR & L1 & 12,611 & 1,425 & 200 & NR \\
+CFJLNet~\cite{cfjl} & NR & NR & NR & NR & NR & NR & NR \\
+BoGFF-Net~\cite{bogff} & NR & NR & Triplet / regression & NR & NR & 200 & NR \\
+Divide/conquer~\cite{lightweight} & NR & NR & NR & NR & NR & NR & NR \\
+BoNet+~\cite{bonetplus} & Adam & $10^{-3}$ & Smooth L1 & 12,611 & 1,425 & 200 & NR \\
+DSGTF~\cite{stage} & AdamW & NR & Multitask & 8,827 & 1,892 & 1,892 & NR \\
+Early global checkpoint & AdamW & $10^{-4}$ / $3	imes10^{-4}$ & MAE + CE + CDF & 10077 & 1259 & Dev only & 0.42 h \\
+\bottomrule
+\end{tabularx}
+\end{table*}

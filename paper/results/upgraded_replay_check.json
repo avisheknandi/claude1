@@ -1,0 +1,9 @@
+{
+  "encoder_max_absolute_error": 4.208646714687347e-06,
+  "encoder_relative_l2_error": 1.0755527258702337e-05,
+  "fusion_max_absolute_error": 0.0,
+  "passed": true,
+  "precision": "FP32",
+  "views": 3,
+  "resolution": 64
+}

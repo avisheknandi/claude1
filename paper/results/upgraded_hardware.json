@@ -1,0 +1,13 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "total_mib": 4095.5,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "parameters_image_model": 24069457,
+  "device": {
+    "device_used_mib": 3950.0,
+    "temperature_c": 68.0,
+    "power_w": 41.51
+  },
+  "profile": "22 complete updates per mode, first two timing warmups excluded"
+}

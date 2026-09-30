@@ -1,0 +1,9 @@
+Method,Resolution,GPU,Batch,Epochs,Parameters,FLOPs,VRAM,Latency
+Chen et al.~\cite{chen},NR,NR,NR,NR,NR,NR,NR,NR
+RFGA-Net~\cite{rfga},$576^2$,2$\times$3090,36,100,NR,NR,NR,NR
+CFJLNet~\cite{cfjl},NR,NR,NR,NR,NR,NR,NR,NR
+BoGFF-Net~\cite{bogff},NR,NR,NR,NR,NR,NR,NR,NR
+Divide/conquer~\cite{lightweight},NR,NR,NR,NR,NR,NR,NR,NR
+BoNet+~\cite{bonetplus},$500^2$,RTX 4090,17,150,NR,NR,NR,NR
+DSGTF~\cite{stage},$299^2/240^2$,RTX 4090,8,100,NR,NR,NR,115 ms
+Early global checkpoint,$384^2$,RTX 3050 4 GB,8,5,3.394 M,NR,834 MiB,NR

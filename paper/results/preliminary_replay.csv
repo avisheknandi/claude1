@@ -1,0 +1,8 @@
+Quantity,Value
+encoder max absolute error,3.725e-09
+encoder relative l2 error,4.540e-08
+fusion max absolute error,0.000e+00
+passed,True
+precision,FP32
+views,3
+resolution,64

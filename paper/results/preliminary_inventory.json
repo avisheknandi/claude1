@@ -1,0 +1,9 @@
+{
+  "references": 40,
+  "results_figures": 11,
+  "gradcam_images": 5,
+  "results_tables": 13,
+  "literature_tables": 1,
+  "source": "C:\\ABC\\RSNA_BONE_AGE\\bare_impl\\paper\\bare_ieee_access.tex",
+  "scope": "preliminary development-only global checkpoint; final acquisition model still training"
+}

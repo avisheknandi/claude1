@@ -1,0 +1,11 @@
+{
+  "unseen_isolation_[0]": 0.0,
+  "unseen_isolation_[0, 2]": 0.0,
+  "unseen_isolation_[0, 2, 7]": 0.0,
+  "budget_0": true,
+  "budget_1": true,
+  "budget_2": true,
+  "budget_3": true,
+  "immediate_stop_equals_global": true,
+  "invalid_sex_rejected": true
+}

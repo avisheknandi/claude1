@@ -1,0 +1,6 @@
+Partition,$N$,Female,Male,Age (mo)
+fit,10077,4631,5446,1--228
+dev,1259,576,683,4--228
+calibration,1256,562,694,10--228
+holdout,1425,652,773,3--228
+excluded,19,9,10,48--192

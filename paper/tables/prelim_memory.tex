@@ -1,0 +1,13 @@
+\begin{table}[!t]
+\centering\footnotesize
+\caption{Ten-view synthetic-input admission profile on the RTX 3050, batch two; 22 complete optimizer updates per mode, first two excluded from timing. Both modes fit 4 GB. Device use is sampled, not a continuously measured peak.}
+\label{tab:prelim_memory}
+\begin{tabularx}{\columnwidth}{@{}p{27mm}XXXX@{}}
+\toprule
+Mode & Allocated MiB & Reserved MiB & Device MiB & s/update \\
+\midrule
+joint & 687.5 & 704.0 & 819 & 0.225 \\
+replay & 192.3 & 260.0 & 375 & 0.345 \\
+\bottomrule
+\end{tabularx}
+\end{table}

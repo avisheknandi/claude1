@@ -1,0 +1,12 @@
+{
+  "references": 40,
+  "result_figures": 11,
+  "actual_gradcam_cases": 5,
+  "results_tables": 14,
+  "literature_tables": 1,
+  "pdf_pages": 13,
+  "scope": "Preliminary development-only MobileNet results; larger ResNet experiment running",
+  "compiler": "Local MiKTeX pdflatex successful; built-in compiler platform-directory failure",
+  "visual_qa": "All rendered pages inspected: initial 1-9 contact sheet and page7 detail; final pages10-13 inspected after layout edit; five Grad-CAM panels visually checked in pages8-9.",
+  "source_sha256": "feccceab5879d8a2106b82a57adc2d230ee642a145ff614be9911a256099fd02"
+}

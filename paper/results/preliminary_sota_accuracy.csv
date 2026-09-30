@@ -1,0 +1,9 @@
+Method,MAE (mo),RMSE (mo),Evaluation,Backbone / fusion,Auxiliary inputs
+Chen et al.~\cite{chen},4.40,4.78,Official test 200,Attention-guided multiview,No keypoints
+RFGA-Net~\cite{rfga},3.34,4.02,Official test 200,InceptionV3 + RAA/FFA,Sex; attention
+CFJLNet~\cite{cfjl},4.07,NR,Official test (as cited),Coarse/fine attention,Attention
+BoGFF-Net~\cite{bogff},3.91,NR,Official test 200,Multiscale self-attention,Sex; triplet objective
+Divide/conquer~\cite{lightweight},3.90,NR,RSNA test; 0--20 yr,Lightweight regional CNNs,Regional decomposition
+BoNet+~\cite{bonetplus},3.81,NR,Official test 200,InceptionV3 + transformer,Keypoints / boxes
+DSGTF~\cite{stage},4.82,NR,"Custom test 1,892",InceptionV3 + EfficientNet-B1,17 keypoints
+Early global checkpoint,8.285,10.928,"Development 1,259",MobileNetV3 + attention,Sex; no keypoints

@@ -1,0 +1,358 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(bare_ieee_access.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(ieeeaccess.cls (IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+-- This is a 10 point document.
+) (C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.te
+x
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex)
+))){C:/Users/AVISHEK/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{./t1-tim
+es.map}{./t1-formata.map}{./t1-giovannistd.map}
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cf
+g)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.d
+ef)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.lt
+x)) (spotcolor.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics
+.cfg))))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+) (C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.
+sty (C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseud
+ocode.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorith
+micx.sty
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tik
+z.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.st
+y
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.
+sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfut
+il-common.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfut
+il-latex.def)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrc
+s.code.tex
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.te
+x)))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcor
+e.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsy
+s.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sys.code.tex
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+ys.code.tex
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+yslibraryfiltered.code.tex))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+.cfg)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sys-pdftex.def
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sys-common-pdf.def)))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+syssoftpath.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
+sysprotocol.code.tex))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cf
+g)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.lt
+x))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+ore.code.tex
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.co
+de.tex
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathuti
+l.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpar
+ser.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.basic.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.trigonometric.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.random.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.comparison.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.base.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.round.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.misc.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
+ctions.integerarithmetics.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcal
+c.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathflo
+at.code.tex))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.cod
+e.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepoints.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepathconstruct.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepathusage.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orescopes.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oregraphicstate.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oretransformations.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orequick.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreobjects.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepathprocessing.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orearrows.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreshade.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreimage.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oreexternal.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orelayers.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+oretransparency.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orepatterns.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
+orerdf.code.tex)))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
+leshapes.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
+leplot.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgf
+comp-version-0-65.sty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgf
+comp-version-1-18.sty))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.
+sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys
+.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+ys.code.tex))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.co
+de.tex))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffo
+r.code.tex))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
+ikz\tikz.code.tex
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfli
+braryplothandlers.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
+lematrix.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
+ikz/libraries\tikzlibrarytopaths.code.tex)))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfli
+braryarrows.meta.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
+ikz/libraries\tikzlibrarypositioning.code.tex)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.s
+ty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefi
+nekeys.sty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape
+.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcm
+ds.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr
+.sty)))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gett
+itlestring.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
+ty)))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc
+.sty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintca
+lc.sty)))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
+ilecheck.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniqu
+ecounter.sty)))
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\l3backend-pd
+ftex.def) (bare_ieee_access.aux)
+-- Lines per column: 56 (exact).
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd)
+(t1times.fd)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
+mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
+-base.sty
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys
+.cfg)) (bare_ieee_access.out) (bare_ieee_access.out)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Users\AVISHEK\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 31--31
+[]  
+
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 31--31
+[]  
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 44.
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+[1 <./logo.png> <./bullet.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 48.
+
+
+Package xcolor Warning: Incompatible color definition on input line 52.
+
+
+Underfull \hbox (badness 2035) in paragraph at lines 55--56
+[]\T1/times/n/n/10 Image pre-pro-cess-ing nor-mal-izes the 0.5th--99.5th per-
+
+Package xcolor Warning: Incompatible color definition on input line 57.
+
+
+Package xcolor Warning: Incompatible color definition on input line 83.
+
+Please use mathrm in math mode instead of rm.
+Please use mathrm in math mode instead of rm.
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+[2 <./notaglinelogo.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 124.
+
+(references.tex
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+\T1/times/m/n/7.61 In-verted Resid-u-als and Lin-ear Bot-tle-necks", \T1/times/
+n/it/7.61 arXiv preprint
+
+Underfull \hbox (badness 3281) in paragraph at lines 27--28
+[]\T1/times/m/n/7.61 Liu, Ze, Lin, Yu-tong, Cao, Yue et al., ``Swin Trans-forme
+r: Hi-er-
+
+Underfull \hbox (badness 1448) in paragraph at lines 27--28
+\T1/times/m/n/7.61 ar-chi-cal Vi-sion Trans-former us-ing Shifted Win-dows", \T
+1/times/n/it/7.61 arXiv preprint
+
+Underfull \hbox (badness 1783) in paragraph at lines 28--29
+\T1/times/m/n/7.61 Learn-ing Batch Size un-der Mem-ory Lim-ited Setup", \T1/tim
+es/n/it/7.61 arXiv preprint
+)
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+[4] (bare_ieee_access.aux) )
+(see the transcript file for additional information)
+pdfTeX warning (dest): name{section*.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+<C:/Users/AVISHEK/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmex10.pfb><C:/Users/AVISHEK/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb><C:/Users/AVISHEK/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmi7.pfb><C:/Users/AVISHEK/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/AVISHEK/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/AVISHEK/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/AVISHEK
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><./t1-f
+ormata-bold.pfb><./t1-formata-condmedium.pfb><./t1-formata-medium.pfb><./t1-for
+mata-mediumitalic.pfb><./t1-formata-regular.pfb><./t1-giovannistd-bookitalic.pf
+b><./t1-times-bold.pfb><./t1-times-italic.pfb><./t1-times.pfb>
+Output written on bare_ieee_access.pdf (4 pages, 355057 bytes).
+Transcript written on bare_ieee_access.log.

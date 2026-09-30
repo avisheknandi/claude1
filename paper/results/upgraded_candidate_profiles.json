@@ -1,0 +1,38 @@
+[
+  {
+    "backbone": "efficientnet_b2",
+    "batch": 4,
+    "global_size": 512,
+    "local_size": 320,
+    "parameters": 8180499,
+    "reserved_mib": 1558.0,
+    "allocated_mib": 1437.96337890625,
+    "seconds_microbatch": 1.0411783499999974,
+    "images_per_second": 3.8418009748281934,
+    "oom": false
+  },
+  {
+    "backbone": "resnet50",
+    "batch": 2,
+    "global_size": 512,
+    "local_size": 320,
+    "parameters": 24069457,
+    "reserved_mib": 894.0,
+    "allocated_mib": 811.43408203125,
+    "seconds_microbatch": 0.539500450000002,
+    "images_per_second": 3.707133145115991,
+    "oom": false
+  },
+  {
+    "backbone": "resnet50",
+    "batch": 4,
+    "global_size": 512,
+    "local_size": 320,
+    "parameters": 24069457,
+    "reserved_mib": 1356.0,
+    "allocated_mib": 1242.93408203125,
+    "seconds_microbatch": 0.7866703749999999,
+    "images_per_second": 5.084721793419512,
+    "oom": false
+  }
+]
